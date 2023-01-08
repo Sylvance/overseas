@@ -14,6 +14,11 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
+### Authorization
+
+- To manage your UPS access keys go to https://www.ups.com/upsdeveloperkit/manageaccesskeys
+- For DHL check https://developer.dhl.com/
+
 ### Tracking with UPS
 
 ```ruby

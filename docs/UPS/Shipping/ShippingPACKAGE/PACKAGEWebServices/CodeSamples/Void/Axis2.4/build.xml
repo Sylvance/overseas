@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sample build.xml, you can run each target separately as you want, to test the complete sample code, use build "all"-->
+<project name="Axis2.4 Code Sample for UPS Void webservice" default="all" basedir=".">
+    <property file="build.properties"/>
+    <property name="gensrc" value="${src}/${deletefolder}"/>
+    <path id="axis.classpath">
+        <fileset dir="${axis.home}" includes="*.jar"/>
+        <pathelement location="build/classes"/>
+    </path>
+    <target name="all" depends="run"/>
+    <target name="clean">
+        <delete dir="${build}"/>
+        <delete dir="${gensrc}"/>
+    </target>
+    <target name="prepare" depends="clean">
+        <mkdir dir="${build.classes}"/>
+    </target>
+    <target name="genclients" depends="prepare">
+        <java classname="org.apache.axis2.wsdl.WSDL2Java" fork="true">
+            <classpath refid="axis.classpath"/>
+            <arg value="-o"/>
+            <arg value="."/>
+            <arg value="-p"/>
+            <arg value="com.ups.www.wsdl.xoltws.voidws.v1_1"/>
+            <arg value="-uri"/>
+            <arg file="${wsdl.home}/${wsdl}"/>
+            <arg file="${basedir}/${src}"/>
+            <arg file="${basedir}/wscompile-config.xml"/>
+        </java>
+    </target>
+    <target name="compile" depends="genclients">
+        <echo message="Compiling client files"/>
+        <javac srcdir="${src}" destdir="${build.classes}" deprecation="true" failonerror="true" debug="true">
+            <classpath refid="axis.classpath"/>
+        </javac>
+    </target>
+    <target name="run" depends="compile" description="run simple client">
+        <echo message="Running client file"/>
+        <java classname="${clientname}">
+            <classpath refid="axis.classpath"/>
+        </java>
+    </target>
+</project>

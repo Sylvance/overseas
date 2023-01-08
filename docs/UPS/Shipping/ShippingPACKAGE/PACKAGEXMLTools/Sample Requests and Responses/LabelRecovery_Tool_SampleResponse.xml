@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LabelRecoveryResponse>
+	<Response>
+		<TransactionReference>
+			<CustomerContext>Label Recovery</CustomerContext>
+			<XpciVersion>yourversion</XpciVersion>
+		</TransactionReference>
+		<ResponseStatusCode>1</ResponseStatusCode>
+		<ResponseStatusDescription>Success</ResponseStatusDescription>
+	</Response>
+</LabelRecoveryResponse>

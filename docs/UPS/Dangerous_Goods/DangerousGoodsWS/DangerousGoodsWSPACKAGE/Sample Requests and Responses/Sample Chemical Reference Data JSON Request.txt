@@ -1,0 +1,22 @@
+{
+	"UPSSecurity": {
+		"UsernameToken": {
+			"Username": "Your User Name",
+			"Password": "Your Password"
+		},
+		"ServiceAccessToken": {
+			"AccessLicenseNumber": "Your Access License Number"
+		}
+	},
+	"ChemicalReferenceDataRequest": {
+		"Request": {
+			"TransactionReference": {
+				"CustomerContext": "Your Customer Context"
+			},
+			 "SubVersion": "1801"
+		},
+		"IDNumber": "UN1956",
+   		"ProperShippingName": "Compressed gas, n.o.s",
+		"ShipperNumber": "Your Shipper Number"
+	}
+}

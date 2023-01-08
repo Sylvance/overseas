@@ -1,0 +1,65 @@
+{
+	"UPSSecurity": {
+		"UsernameToken": {
+			"Username": "Your User Name",
+			"Password": "Your Password"
+		},
+		"ServiceAccessToken": {
+			"AccessLicenseNumber": "Your Access License Number"
+		}
+	},
+	"AcceptanceAuditPreCheckRequest": {
+		"Request": {
+			"TransactionReference": {
+				"CustomerContext": "Your Customer Context"
+			}
+		},
+		"OriginRecordTransactionTimestamp": "Your Origin Record Transaction Timestamp",
+		"Shipment": {
+			"ShipperNumber": "Your Shipper Number",
+			"ShipFromAddress": {
+				"AddressLine": "Ship From Address Line",
+				"City": "Lutherville Timonium",
+				"StateProvinceCode": "MD",
+				"PostalCode": "21093",
+				"CountryCode": "US"
+			},
+			"ShipToAddress": {
+				"AddressLine": "Ship To Address Line",
+				"City": "New Milford",
+				"StateProvinceCode": "NJ",
+				"PostalCode": "07646",
+				"CountryCode": "US"
+			},
+			"Service": {
+				"Code": "001"
+			},
+			"RegulationSet": "IATA",
+			"Package": {
+				"PackageIdentifier": "1",
+				"PackageWeight": {
+					"Weight": "12",
+					"UnitOfMeasurement": {
+						"Code": "LBS"
+					}
+				},
+				"TransportationMode": "PAX",
+				"EmergencyPhone": "Your Emergency Phone",
+				"EmergencyContact": "Your Emergency Contact",
+				"ChemicalRecord": {
+					"ChemicalRecordIdentifier": "1",
+					"ClassDivisionNumber": "3",
+					"IDNumber": "UN2332",
+					"Quantity": "25",
+					"UOM": "L",
+					"PackagingInstructionCode": "355",
+					"ProperShippingName": "Acetaldehyde oxime",
+					"PackagingType": "Fiberboard Box",
+					"PackagingGroupType": "III",
+					"PackagingTypeQuantity": "1",
+					"CommodityRegulatedLevelCode": "FR"
+				}
+			}
+		}
+	}
+}

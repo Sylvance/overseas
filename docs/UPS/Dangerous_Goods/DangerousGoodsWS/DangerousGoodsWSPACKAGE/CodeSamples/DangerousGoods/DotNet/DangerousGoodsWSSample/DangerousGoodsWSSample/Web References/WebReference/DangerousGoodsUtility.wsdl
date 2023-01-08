@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:common="http://www.ups.com/XMLSchema/XOLTWS/Common/v1.0" xmlns:upss="http://www.ups.com/XMLSchema/XOLTWS/UPSS/v1.0" xmlns="http://www.ups.com/XMLSchema/XOLTWS/DangerousGoodsUtility/v1.0" xmlns:tns="http://www.ups.com/WSDL/XOLTWS/DangerousGoodsUtility/v1.0" xmlns:error="http://www.ups.com/XMLSchema/XOLTWS/Error/v1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:dg="http://www.ups.com/XMLSchema/XOLTWS/DangerousGoodsUtility/v1.0" name="DangerousGoodsUtility" targetNamespace="http://www.ups.com/WSDL/XOLTWS/DangerousGoodsUtility/v1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema>
+      <xsd:import schemaLocation="UPSSecurity.xsd" namespace="http://www.ups.com/XMLSchema/XOLTWS/UPSS/v1.0" />
+      <xsd:import schemaLocation="common.xsd" namespace="http://www.ups.com/XMLSchema/XOLTWS/Common/v1.0" />
+      <xsd:import schemaLocation="Error1.1.xsd" namespace="http://www.ups.com/XMLSchema/XOLTWS/Error/v1.1" />
+      <xsd:import schemaLocation="DangerousGoodsUtility.xsd" namespace="http://www.ups.com/XMLSchema/XOLTWS/DangerousGoodsUtility/v1.0" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AcceptanceAuditPreCheckRequestMessage">
+    <wsdl:part name="Body" element="dg:AcceptanceAuditPreCheckRequest" />
+    <wsdl:part name="UPSSecurity" element="upss:UPSSecurity" />
+  </wsdl:message>
+  <wsdl:message name="AcceptanceAuditPreCheckResponseMessage">
+    <wsdl:part name="Body" element="dg:AcceptanceAuditPreCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="AcceptanceAuditPreCheckErrorMessage">
+    <wsdl:part name="AcceptanceAuditPreCheckError" element="error:Errors" />
+  </wsdl:message>
+  <wsdl:message name="ChemicalReferenceDataRequestMessage">
+    <wsdl:part name="Body" element="dg:ChemicalReferenceDataRequest" />
+    <wsdl:part name="UPSSecurity" element="upss:UPSSecurity" />
+  </wsdl:message>
+  <wsdl:message name="ChemicalReferenceDataResponseMessage">
+    <wsdl:part name="Body" element="dg:ChemicalReferenceDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChemicalReferenceDataErrorMessage">
+    <wsdl:part name="ChemicalReferenceDataError" element="error:Errors" />
+  </wsdl:message>
+  <wsdl:portType name="DangerousGoodsUtilityPortType">
+    <wsdl:operation name="ProcessAcceptanceAuditPreCheck">
+      <wsdl:input name="AcceptanceAuditPreCheckRequest" message="tns:AcceptanceAuditPreCheckRequestMessage" />
+      <wsdl:output name="AcceptanceAuditPreCheckResponse" message="tns:AcceptanceAuditPreCheckResponseMessage" />
+      <wsdl:fault name="AcceptanceAuditPreCheckError" message="tns:AcceptanceAuditPreCheckErrorMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessChemicalReferenceData">
+      <wsdl:input name="ChemicalReferenceDataRequest" message="tns:ChemicalReferenceDataRequestMessage" />
+      <wsdl:output name="ChemicalReferenceDataResponse" message="tns:ChemicalReferenceDataResponseMessage" />
+      <wsdl:fault name="ChemicalReferenceDataError" message="tns:ChemicalReferenceDataErrorMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DangerousGoodsUtilityBinding" type="tns:DangerousGoodsUtilityPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessAcceptanceAuditPreCheck">
+      <soap:operation soapAction="http://onlinetools.ups.com/webservices/DangerousGoodsUtilityBinding/v1.0" style="document" />
+      <wsdl:input name="AcceptanceAuditPreCheckRequest">
+        <soap:body use="literal" parts="Body" />
+        <soap:header message="tns:AcceptanceAuditPreCheckRequestMessage" part="UPSSecurity" use="literal">
+          <soap:headerfault message="tns:AcceptanceAuditPreCheckErrorMessage" part="AcceptanceAuditPreCheckError" use="literal" />
+        </soap:header>
+      </wsdl:input>
+      <wsdl:output name="AcceptanceAuditPreCheckResponse">
+        <soap:body use="literal" parts="Body" />
+      </wsdl:output>
+      <wsdl:fault name="AcceptanceAuditPreCheckError">
+        <soap:fault use="literal" name="AcceptanceAuditPreCheckError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessChemicalReferenceData">
+      <soap:operation soapAction="http://onlinetools.ups.com/webservices/DangerousGoodsUtilityBinding/v1.0" style="document" />
+      <wsdl:input name="ChemicalReferenceDataRequest">
+        <soap:body use="literal" parts="Body" />
+        <soap:header message="tns:ChemicalReferenceDataRequestMessage" part="UPSSecurity" use="literal">
+          <soap:headerfault message="tns:ChemicalReferenceDataErrorMessage" part="ChemicalReferenceDataError" use="literal" />
+        </soap:header>
+      </wsdl:input>
+      <wsdl:output name="ChemicalReferenceDataResponse">
+        <soap:body use="literal" parts="Body" />
+      </wsdl:output>
+      <wsdl:fault name="ChemicalReferenceDataError">
+        <soap:fault use="literal" name="ChemicalReferenceDataError" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DangerousGoodsUtility">
+    <wsdl:port name="DangerousGoodsUtilityPort" binding="tns:DangerousGoodsUtilityBinding">
+      <soap:address location="https://wwwcie.ups.com/webservices/DangerousGoodsUtility" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

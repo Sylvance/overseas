@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<AccessRequest xml:lang="en-US">
+  <AccessLicenseNumber>YourLicenseNumber</AccessLicenseNumber>
+  <UserId>YourUserID</UserId>
+  <Password>YourPassword</Password>
+  </AccessRequest>
+<?xml version="1.0"?>
+<LabelRecoveryRequest xml:lang="en-US">
+
+  <Request>
+    <TransactionReference>
+      <CustomerContext>Label Recovery</CustomerContext>
+      <XpciVersion>1.0002</XpciVersion>
+    </TransactionReference>
+    <RequestAction>LabelRecovery</RequestAction>
+    <RequestOption/>
+  </Request>
+  <LabelDelivery>
+	<LabelLinkIndicator/>
+  </LabelDelivery>  	
+  <TrackingNumber>YourTrackingNumber</TrackingNumber>
+</LabelRecoveryRequest>

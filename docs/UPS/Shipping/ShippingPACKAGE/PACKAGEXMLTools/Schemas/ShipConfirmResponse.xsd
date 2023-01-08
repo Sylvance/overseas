@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ups="http://www.ups.com/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="201701">
+	<xsd:element name="ShipmentConfirmResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Response"/>
+				<xsd:element ref="ShipmentCharges" minOccurs="0"/>
+				<xsd:element ref="BillingWeight"/>
+				<xsd:element ref="ShipmentIdentificationNumber"/>
+				<xsd:element ref="MIDualReturnShipmentKey" minOccurs="0"/>
+				<xsd:element ref="BillableWeightCalculationMethod" minOccurs="0"/>
+				<xsd:element ref="RatingMethod" minOccurs="0"/>
+				<xsd:element name="Disclaimer" type="DisclaimerType" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="ShipmentDigest"/>
+				<xsd:element ref="NegotiatedRates" minOccurs="0"/>
+				<xsd:element ref="PackageResults"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Response">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="TransactionReference" minOccurs="0"/>
+				<xsd:element ref="ResponseStatusCode"/>
+				<xsd:element ref="ResponseStatusDescription" minOccurs="0"/>
+				<xsd:element ref="Error" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ResponseStatusCode" type="xsd:string"/>
+	<xsd:element name="ResponseStatusDescription" type="xsd:string"/>
+	<xsd:element name="TransactionReference">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="CustomerContext" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Error">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ErrorSeverity"/>
+				<xsd:element ref="ErrorCode"/>
+				<xsd:element ref="ErrorDescription" minOccurs="0"/>
+				<xsd:element ref="MinimumRetrySeconds" minOccurs="0"/>
+				<xsd:element ref="ErrorLocation" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="ErrorDigest" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ErrorCode" type="xsd:string"/>
+	<xsd:element name="ErrorDescription" type="xsd:string"/>
+	<xsd:element name="ErrorDigest" type="xsd:string"/>
+	<xsd:element name="ErrorSeverity" type="xsd:string"/>
+	<xsd:element name="ErrorLocation">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ErrorLocationElementName" minOccurs="0"/>
+				<xsd:element ref="ErrorLocationAttributeName" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ErrorLocationAttributeName" type="xsd:string"/>
+	<xsd:element name="ErrorLocationElementName" type="xsd:string"/>
+	<xsd:element name="ErrorLocationElementReference" type="xsd:string"/>
+	<xsd:element name="MinimumRetrySeconds" type="xsd:string"/>
+	<xsd:element name="ShipmentIdentificationNumber" type="xsd:string"/>
+	<xsd:element name="MIDualReturnShipmentKey" type="xsd:string"/>
+	<xsd:element name="BillableWeightCalculationMethod" type="xsd:string"/>
+	<xsd:element name="RatingMethod" type="xsd:string"/>
+	<xsd:element name="ShipmentDigest" type="xsd:string"/>
+	<xsd:complexType name="DisclaimerType">
+		<xsd:sequence>
+			<xsd:element name="Code" type="xsd:string"/>
+			<xsd:element name="Description" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ShipmentCharges">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="RateChart" type="xsd:string"/>
+				<xsd:element ref="BaseServiceCharge" minOccurs="0"/>
+				<xsd:element ref="TransportationCharges"/>
+				<xsd:element ref="ServiceOptionsCharges"/>
+				<xsd:element ref="ItemizedCharges" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="TaxCharges" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="TotalCharges"/>
+				<xsd:element ref="TotalChargesWithTaxes" minOccurs="0"/>
+				<xsd:element name="EstimatedDutiesAndTaxes" type="ship:EstimatedDutiesAndTaxesType" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="EstimatedDutiesAndTaxesType">
+		<xsd:sequence>
+			<xsd:element name="CurrencyCode" type="xsd:string"/>
+			<xsd:element name="MonetaryValue" type="xsd:string"/>
+			<xsd:element name="BrokerageFees" type="ship:BrokerageFeesType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="BrokerageFeesType">
+		<xsd:sequence>
+			<xsd:element name="ChargeName" type="xsd:string"/>
+			<xsd:element name="ChargeAmount" type="xsd:string"/>
+			<xsd:element name="TotalBrokerageFees" type="xsd:string"/>
+			<xsd:element name="TotalDuties" type="xsd:string"/>
+			<xsd:element name="TotalCommodityLevelTaxesAndFees" type="xsd:string"/>
+			<xsd:element name="TotalShipmentLevelTaxesAndFees" type="xsd:string"/>
+			<xsd:element name="TotalVAT" type="xsd:string"/>
+			<xsd:element name="GrandTotal" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="BaseServiceCharge" type="MonetaryType"/>
+	<xsd:element name="TransportationCharges" type="MonetaryType"/>
+	<xsd:element name="ServiceOptionsCharges" type="MonetaryType"/>
+	<xsd:element name="ItemizedCharges" type="MonetaryType"/>
+	<xsd:element name="TaxCharges" type="TaxChargeType"/>
+	<xsd:element name="TotalCharges" type="MonetaryType"/>
+	<xsd:element name="TotalChargesWithTaxes" type="MonetaryType"/>
+	<xsd:complexType name="MonetaryType">
+		<xsd:sequence>
+			<xsd:element name="Code" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element ref="CurrencyCode" minOccurs="0"/>
+			<xsd:element ref="MonetaryValue"/>
+			<xsd:element name="SubType" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="CurrencyCode" type="xsd:string"/>
+	<xsd:element name="MonetaryValue" type="xsd:string"/>
+	<xsd:complexType name="TaxChargeType">
+		<xsd:sequence>
+			<xsd:element name="Type" type="xsd:string"/>
+			<xsd:element name="MonetaryValue" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="NegotiatedRates">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ItemizedCharges" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="TaxCharges" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="NetSummaryCharges"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="PackageResults">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="CommodityDutyCharges"/>
+				<xsd:element name="CommodityDuty"/>
+				<xsd:element name="TotalCommodityTaxAndFee"/>
+				<xsd:element name="CommodityVAT"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="NetSummaryCharges">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="GrandTotal"/>
+				<xsd:element ref="TotalChargesWithTaxes" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GrandTotal">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="CurrencyCode"/>
+				<xsd:element ref="MonetaryValue"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BillingWeight">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="UnitOfMeasurement" minOccurs="0"/>
+				<xsd:element name="Weight" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UnitOfMeasurement" type="CodeType"/>
+	<xsd:complexType name="CodeType">
+		<xsd:sequence>
+			<xsd:element ref="Code"/>
+			<xsd:element ref="Description" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Code" type="xsd:string"/>
+	<xsd:element name="Description" type="xsd:string"/>
+</xsd:schema>

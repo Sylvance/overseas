@@ -1,0 +1,9 @@
+<jxb:bindings version="1.0" xmlns:jxb="http://java.sun.com/xml/ns/jaxb">
+	<jxb:bindings xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	schemaLocation="../../../../../../../common/source/schema-wsdl/IFWS.xsd" node="/xs:schema">
+	
+		<jxb:schemaBindings>
+			<jxb:package name="com.ups.IFS"/>
+		</jxb:schemaBindings>
+	</jxb:bindings>
+</jxb:bindings>

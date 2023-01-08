@@ -1,0 +1,30 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<dg:AcceptanceAuditPreCheckResponse xmlns:dg="http://www.ups.com/XMLSchema/XOLTWS/DangerousGoodsUtility/v1.0">
+			<common:Response xmlns:common="http://www.ups.com/XMLSchema/XOLTWS/Common/v1.0">
+				<common:ResponseStatus>
+					<common:Code>1</common:Code>
+					<common:Description>Success</common:Description>
+				</common:ResponseStatus>
+				<common:TransactionReference>
+					<common:CustomerContext>Your Customer Context</common:CustomerContext>
+				</common:TransactionReference>
+			</common:Response>
+			<dg:ShipperNumber>Your Shipper Number</dg:ShipperNumber>
+			<dg:Service>
+				<dg:Code>001</dg:Code>
+			</dg:Service>
+			<dg:RegulationSet>IATA</dg:RegulationSet>
+			<dg:PackageResults>
+				<dg:PackageIdentifier>1</dg:PackageIdentifier>
+				<dg:AccessibleIndicator>N</dg:AccessibleIndicator>
+				<dg:EuropeBUIndicator>N</dg:EuropeBUIndicator>
+				<dg:ChemicalRecordResults>
+					<dg:ChemicalRecordIdentifier>1</dg:ChemicalRecordIdentifier>
+					<dg:ADRUnits>0.0</dg:ADRUnits>
+				</dg:ChemicalRecordResults>
+			</dg:PackageResults>
+		</dg:AcceptanceAuditPreCheckResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

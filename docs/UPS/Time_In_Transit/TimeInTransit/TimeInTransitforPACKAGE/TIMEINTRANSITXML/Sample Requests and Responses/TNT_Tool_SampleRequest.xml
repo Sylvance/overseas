@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<AccessRequest xml:lang="en-US">
+  <AccessLicenseNumber>YourLicenseNumber</AccessLicenseNumber>
+  <UserId>YourUserID</UserId>
+  <Password>YourPassword</Password>
+</AccessRequest>
+<?xml version="1.0"?>
+<TimeInTransitRequest xml:lang="en-US">
+  <Request>
+    <TransactionReference>
+	<CustomerContext>Your Test Case Summary Description</CustomerContext>
+      <XpciVersion>1.001</XpciVersion>
+    </TransactionReference>
+    <RequestAction>TimeInTransit</RequestAction>
+  </Request>
+  <TransitFrom>
+    <AddressArtifactFormat>
+      <PoliticalDivision2>Bishkek</PoliticalDivision2>
+      <PostcodePrimaryLow>720001</PostcodePrimaryLow>
+
+
+      <CountryCode>KG</CountryCode>
+
+
+    </AddressArtifactFormat>
+  </TransitFrom>
+  <TransitTo>
+    <AddressArtifactFormat>
+      <PoliticalDivision2>Phoenix</PoliticalDivision2>
+      <PoliticalDivision1>AZ</PoliticalDivision1>
+      <PostcodePrimaryLow>85034</PostcodePrimaryLow>
+      <PostcodeExtendedLow>6410</PostcodeExtendedLow>
+
+
+      <CountryCode>US</CountryCode>
+
+
+    </AddressArtifactFormat>
+  </TransitTo>
+  <PickupDate>20080630</PickupDate>
+
+
+  <MaximumListSize>5</MaximumListSize>
+  <InvoiceLineTotal>
+    <CurrencyCode>USD</CurrencyCode>
+    <MonetaryValue>50</MonetaryValue>
+  </InvoiceLineTotal>
+  <ShipmentWeight>
+    <UnitOfMeasurement>
+      <Code>KGS</Code>
+      <Description>Kilograms</Description>
+    </UnitOfMeasurement>
+    <Weight>2</Weight>
+  </ShipmentWeight>
+</TimeInTransitRequest>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LocatorResponse>
+	<Response>
+		<TransactionReference>
+			<CustomerContext>Your Test Case Summary Description</CustomerContext>
+			<XpciVersion>1.0014</XpciVersion>
+		</TransactionReference>
+		<ResponseStatusCode>1</ResponseStatusCode>
+		<ResponseStatusDescription>Success</ResponseStatusDescription>
+	</Response>
+	<SearchResults>
+		<GeocodeCandidate>
+			<AddressKeyFormat>
+				<PostcodePrimaryLow>85281</PostcodePrimaryLow>
+				<CountryCode>US</CountryCode>
+			</AddressKeyFormat>
+			<Geocode>
+				<Latitude>33.42507171</Latitude>
+				<Longitude>-111.930473</Longitude>
+			</Geocode>
+		</GeocodeCandidate>
+		<GeocodeCandidate>
+			<AddressKeyFormat>
+				<AddressLine>Warsaw Rd</AddressLine>
+				<PoliticalDivision2>Roswell</PoliticalDivision2>
+				<PoliticalDivision1>GA</PoliticalDivision1>
+				<PostcodePrimaryLow>30076</PostcodePrimaryLow>
+				<CountryCode>US</CountryCode>
+			</AddressKeyFormat>
+			<Geocode>
+				<Latitude>34.02830123</Latitude>
+				<Longitude>-84.3350982</Longitude>
+			</Geocode>
+		</GeocodeCandidate>
+		<GeocodeCandidate>
+			<AddressKeyFormat>
+				<AddressLine>Warsaw Rd</AddressLine>
+				<PoliticalDivision2>Roswell</PoliticalDivision2>
+				<PoliticalDivision1>GA</PoliticalDivision1>
+				<PostcodePrimaryLow>30075</PostcodePrimaryLow>
+				<CountryCode>US</CountryCode>
+			</AddressKeyFormat>
+			<Geocode>
+				<Latitude>34.02628707</Latitude>
+				<Longitude>-84.3445281</Longitude>
+			</Geocode>
+		</GeocodeCandidate>
+	</SearchResults>
+</LocatorResponse>

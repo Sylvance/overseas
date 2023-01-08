@@ -1,0 +1,27 @@
+{
+	"AcceptanceAuditPreCheckResponse": {
+		"Response": {
+			"ResponseStatus": {
+				"Code": "1",
+				"Description": "Success"
+			},
+			"TransactionReference": {
+				"CustomerContext": "Your Customer Context"
+			}
+		},
+		"ShipperNumber": "Your Shipper Number",
+		"Service": {
+			"Code": "001"
+		},
+		"RegulationSet": "IATA",
+		"PackageResults": {
+			"PackageIdentifier": "1",
+			"AccessibleIndicator": "N",
+			"EuropeBUIndicator": "N",
+			"ChemicalRecordResults": {
+				"ChemicalRecordIdentifier": "1",				
+				"ADRUnits":"0.0"
+			}
+		}
+	}
+}

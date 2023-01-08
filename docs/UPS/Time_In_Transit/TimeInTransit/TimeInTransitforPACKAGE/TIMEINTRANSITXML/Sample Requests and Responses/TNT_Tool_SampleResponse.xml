@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<TimeInTransitResponse>
+	<Response>
+		<TransactionReference>
+			<CustomerContext>Your Test Case Summary Description</CustomerContext>
+			<XpciVersion>1.0002</XpciVersion>
+		</TransactionReference>
+		<ResponseStatusCode>1</ResponseStatusCode>
+		<ResponseStatusDescription>Success</ResponseStatusDescription>
+	</Response>
+<TransitResponse>
+		<PickupDate>#SK 2007-10-10</PickupDate>
+		<TransitFrom>
+			<AddressArtifactFormat>
+				<PoliticalDivision2>BISHKEK</PoliticalDivision2>
+				<Country>KYRGYZSTAN</Country>
+				<CountryCode>KG</CountryCode>
+				<PostcodePrimaryLow>720001</PostcodePrimaryLow>
+			</AddressArtifactFormat>
+		</TransitFrom>
+		<TransitTo>
+			<AddressArtifactFormat>
+				<PoliticalDivision2>PHOENIX</PoliticalDivision2>
+				<PoliticalDivision1>AZ</PoliticalDivision1>
+				<Country>UNITED STATES</Country>
+				<CountryCode>US</CountryCode>
+				<PostcodePrimaryLow>85034</PostcodePrimaryLow>
+			</AddressArtifactFormat>
+		</TransitTo>
+		<AutoDutyCode>09</AutoDutyCode>
+		<ShipmentWeight>
+			<UnitOfMeasurement>
+				<Code>KGS</Code>
+			</UnitOfMeasurement>
+			<Weight>2.0</Weight>
+		</ShipmentWeight>
+		<InvoiceLineTotal>
+			<CurrencyCode>USD</CurrencyCode>
+			<MonetaryValue>50.00</MonetaryValue>
+		</InvoiceLineTotal>
+		<Disclaimer>All services are guaranteed if shipment is paid for in full by a payee in the United States. Services listed as guaranteed are backed by a money-back guarantee for transportation charges only. See Terms and Conditions in the Service Guide for details. Certain commodities and high value shipments may require additional transit time for customs clearance.</Disclaimer>
+		<ServiceSummary>
+			<Service>
+				<Code>01</Code>
+				<Description>UPS Worldwide Express</Description>
+			</Service>
+			<Guaranteed>
+				<Code>N</Code>
+			</Guaranteed>
+			<EstimatedArrival>
+				<BusinessTransitDays>3</BusinessTransitDays>
+				<Time>10:30:00</Time>
+				<PickupDate>2007-10-10</PickupDate>
+				<PickupTime>23:30:00</PickupTime>
+				<HolidayCount>0</HolidayCount>
+				<DelayCount>0</DelayCount>
+				<Date>2007-10-15</Date>
+				<DayOfWeek>MON</DayOfWeek>
+				<TotalTransitDays>3</TotalTransitDays>
+				<CustomerCenterCutoff>23:30:00</CustomerCenterCutoff>
+				<RestDays>0</RestDays>
+			</EstimatedArrival>
+		</ServiceSummary>
+		<ServiceSummary>
+			<Service>
+				<Code>28</Code>
+				<Description>UPS Express Saver</Description>
+			</Service>
+			<Guaranteed>
+				<Code>N</Code>
+			</Guaranteed>
+			<EstimatedArrival>
+				<BusinessTransitDays>3</BusinessTransitDays>
+				<Time>23:30:00</Time>
+				<PickupDate>2007-10-10</PickupDate>
+				<PickupTime>23:30:00</PickupTime>
+				<HolidayCount>0</HolidayCount>
+				<DelayCount>0</DelayCount>
+				<Date>2007-10-15</Date>
+				<DayOfWeek>MON</DayOfWeek>
+				<TotalTransitDays>3</TotalTransitDays>
+				<CustomerCenterCutoff>23:30:00</CustomerCenterCutoff>
+				<RestDays>0</RestDays>
+			</EstimatedArrival>
+		</ServiceSummary>
+		<MaximumListSize>5</MaximumListSize>
+	</TransitResponse>
+</TimeInTransitResponse>

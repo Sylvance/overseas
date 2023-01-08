@@ -1,0 +1,26 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:upss="http://www.ups.com/XMLSchema/XOLTWS/UPSS/v1.0" xmlns:common="http://www.ups.com/XMLSchema/XOLTWS/Common/v1.0">
+   <soapenv:Header>
+      <upss:UPSSecurity>
+         <upss:UsernameToken>
+            <upss:Username>Your User Name</upss:Username>
+            <upss:Password>Your Password</upss:Password>
+         </upss:UsernameToken>
+         <upss:ServiceAccessToken>
+            <upss:AccessLicenseNumber>Your Access License Number</upss:AccessLicenseNumber>
+         </upss:ServiceAccessToken>
+      </upss:UPSSecurity>
+   </soapenv:Header>
+   <soapenv:Body>
+      <dg:ChemicalReferenceDataRequest xmlns:dg="http://www.ups.com/XMLSchema/XOLTWS/DangerousGoodsUtility/v1.0">
+         <common:Request>
+            <common:TransactionReference>
+               <common:CustomerContext>Your Customer Context</common:CustomerContext>
+            </common:TransactionReference>
+	    <common:SubVersion>1801</common:SubVersion>
+         </common:Request>
+         <dg:IDNumber>UN1956</dg:IDNumber>
+         <dg:ProperShippingName>Compressed gas, n.o.s</dg:ProperShippingName>
+         <dg:ShipperNumber>Your Shipper Number</dg:ShipperNumber>
+      </dg:ChemicalReferenceDataRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

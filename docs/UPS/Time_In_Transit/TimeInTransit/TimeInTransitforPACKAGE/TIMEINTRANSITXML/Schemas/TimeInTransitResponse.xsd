@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:ups="http://www.ups.com/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified">
+	<xsd:element name="TimeInTransitResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="Response"/>
+				<xsd:choice>
+					<xsd:element name="TransitResponse" type="TransitResponseType" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element name="TransitFromList" type="TransitFromListType" minOccurs="0"/>
+					<xsd:element name="TransitToList" type="TransitToListType" minOccurs="0"/>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="TransitResponseType">
+		<xsd:sequence>
+			<xsd:element name="TransitFrom" type="TransitFromType"/>
+			<xsd:element name="TransitTo" type="TransitToType"/>
+			<xsd:element name="PickupDate" type="xsd:string"/>
+			<xsd:element ref="DocumentsOnlyIndicator" minOccurs="0"/>
+			<xsd:element name="AutoDutyCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ShipmentWeight" type="WeightType" minOccurs="0"/>
+			<xsd:element name="InvoiceLineTotal" type="MonetaryType" minOccurs="0"/>
+			<xsd:element name="ServiceSummary" type="ServiceSummaryType" maxOccurs="unbounded"/>
+			<xsd:element name="MaximumListSize" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Disclaimer" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ServiceSummaryType">
+		<xsd:sequence>
+			<xsd:element name="Service" type="CodeType"/>
+			<xsd:element name="Guaranteed" type="CodeType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="Disclaimer" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="EstimatedArrival" type="EstimatedArrivalType"/>
+			<xsd:element name="SaturdayDelivery" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="SaturdayDeliveryDisclaimer" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="EstimatedArrivalType">
+		<xsd:sequence>
+			<xsd:element name="DayOfWeek" type="xsd:string"/>
+			<xsd:element name="Time" type="xsd:string"/>
+			<xsd:element name="Date" type="xsd:string"/>
+			<xsd:element name="PickupDate" type="xsd:string"/>
+			<xsd:element name="PickupTime" type="xsd:string"/>
+			<xsd:element name="BusinessTransitDays" type="xsd:string"/>
+			<xsd:element name="TotalTransitDays" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CustomerCenterCutoff" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="RestDays" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="HolidayCount" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="DelayCount" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TransitFromType">
+		<xsd:sequence>
+			<xsd:element name="AddressArtifactFormat" type="TransitFromAddressArtifactFormatType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TransitFromAddressArtifactFormatType">
+		<xsd:sequence>
+			<xsd:element name="PoliticalDivision3" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PoliticalDivision2" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PoliticalDivision1" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CountryCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PostcodePrimaryLow" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TransitToType">
+		<xsd:sequence>
+			<xsd:element name="AddressArtifactFormat" type="TransitToAddressArtifactFormatType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TransitToAddressArtifactFormatType">
+		<xsd:sequence>
+			<xsd:element name="PoliticalDivision3" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PoliticalDivision2" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PoliticalDivision1" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CountryCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PostcodePrimaryLow" type="xsd:string" minOccurs="0"/>
+			<xsd:element ref="ResidentialAddressIndicator" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="ResidentialAddressIndicator" type="xsd:string"/>
+	<xsd:element name="DocumentsOnlyIndicator" type="xsd:string"/>
+	<xsd:complexType name="WeightType">
+		<xsd:sequence>
+			<xsd:element name="UnitOfMeasurement" type="CodeType" minOccurs="0"/>
+			<xsd:element name="Weight" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CodeType">
+		<xsd:sequence>
+			<xsd:element name="Code" type="xsd:string"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MonetaryType">
+		<xsd:sequence>
+			<xsd:element name="CurrencyCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="MonetaryValue" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TransitFromListType">
+		<xsd:sequence>
+			<xsd:element name="Candidate" type="CandidateType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="TransitToListType">
+		<xsd:sequence>
+			<xsd:element name="Candidate" type="CandidateType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CandidateType">
+		<xsd:sequence>
+			<xsd:element name="AddressArtifactFormat" type="AddressArtifactFormatType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddressArtifactFormatType">
+		<xsd:sequence>
+			<xsd:element name="PoliticalDivision3" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PoliticalDivision2" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PoliticalDivision1" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Country" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="CountryCode" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PostcodePrimaryHigh" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="PostcodePrimaryLow" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Response">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="TransactionReference" minOccurs="0"/>
+				<xsd:element name="ResponseStatusCode" type="xsd:string"/>
+				<xsd:element name="ResponseStatusDescription" type="xsd:string" minOccurs="0"/>
+				<xsd:element ref="Error" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TransactionReference">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="CustomerContext" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Error">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ErrorSeverity" type="xsd:string"/>
+				<xsd:element name="ErrorCode" type="xsd:string"/>
+				<xsd:element name="ErrorDescription" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="MinimumRetrySeconds" type="xsd:string" minOccurs="0"/>
+				<xsd:element ref="ErrorLocation" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element name="ErrorDigest" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ErrorLocation">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="ErrorLocationElementName" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="ErrorLocationAttributeName" type="xsd:string" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

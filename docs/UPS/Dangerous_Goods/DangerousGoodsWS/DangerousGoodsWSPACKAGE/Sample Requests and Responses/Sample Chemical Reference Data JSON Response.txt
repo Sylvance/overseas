@@ -1,0 +1,112 @@
+{
+  "ChemicalReferenceDataResponse": {
+    "Response": {
+      "ResponseStatus": {
+        "Code": "1",
+        "Description": "Success"
+      },
+      "TransactionReference": {
+        "CustomerContext": "To get chemical records back for a CRD request with valid IDNumber and valid ProperShippingName."
+      }
+    },
+    "ChemicalData": [
+      {
+        "ChemicalDetail": {
+          "RegulationSet": "TDG",
+          "IDNumber": "UN1956",
+          "HazardousMaterialsDescription": "COMPRESSED GAS, N.O.S.",
+          "ClassDivisionNumber": "2.2",
+          "TechnicalNameRequiredIndicator": "Y",
+          "AdditionalShippingInformationRequiredIndicator": "N",
+          "ChannelTunnelAcceptedIndicator": "N",
+          "ChemicalType": "TDG",
+          "CAToUSShipmentAllowedIndicator": "Y"
+        },
+        "ProperShippingNameDetail": {
+          "ProperShippingName": "COMPRESSED GAS, N.O.S."
+        },
+        "PackageQuantityLimitDetail": [
+          {
+            "PackageQuantityLimitTypeCode": "CAO",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "COMAT CAO",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "COMAT LTD",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "COMAT PAX",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "GND",
+            "Quantity": "30.0000",
+            "UOM": "L"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "LTD QTY",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "PAX",
+            "Quantity": "0.0000"
+          }
+        ]
+      },
+      {
+        "ChemicalDetail": {
+          "RegulationSet": "ADR",
+          "IDNumber": "UN1956",
+          "HazardousMaterialsDescription": "COMPRESSED GAS, N.O.S.",
+          "ClassDivisionNumber": "2.2",
+          "TechnicalNameRequiredIndicator": "Y",
+          "AdditionalShippingInformationRequiredIndicator": "N",
+          "TunnelRestrictionCode": "(E)",
+          "TransportCategory": "3",
+          "TransportMultiplierQuantity": "1",
+          "ChannelTunnelAcceptedIndicator": "Y",
+          "ChemicalType": "ADR"
+        },
+        "ProperShippingNameDetail": {
+          "ProperShippingName": "COMPRESSED GAS, N.O.S."
+        },
+        "PackageQuantityLimitDetail": [
+          {
+            "PackageQuantityLimitTypeCode": "CAO",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "COMAT CAO",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "COMAT LTD",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "COMAT PAX",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "GND",
+            "Quantity": "30.0000",
+            "UOM": "KG G",
+            "PackagingInstructionCode": "P200"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "LTD QTY",
+            "Quantity": "0.0000"
+          },
+          {
+            "PackageQuantityLimitTypeCode": "PAX",
+            "Quantity": "0.0000"
+          }
+        ]
+      }
+    ]
+  }
+}

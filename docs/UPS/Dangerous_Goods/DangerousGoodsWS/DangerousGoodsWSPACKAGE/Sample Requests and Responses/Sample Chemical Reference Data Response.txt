@@ -1,0 +1,109 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <dg:ChemicalReferenceDataResponse xmlns:dg="http://www.ups.com/XMLSchema/XOLTWS/DangerousGoodsUtility/v1.0">
+         <common:Response xmlns:common="http://www.ups.com/XMLSchema/XOLTWS/Common/v1.0">
+            <common:ResponseStatus>
+               <common:Code>1</common:Code>
+               <common:Description>Success</common:Description>
+            </common:ResponseStatus>
+            <common:TransactionReference>
+               <common:CustomerContext>To get chemical records back for a CRD request with valid IDNumber and valid ProperShippingName.</common:CustomerContext>
+            </common:TransactionReference>
+         </common:Response>
+         <dg:ChemicalData>
+            <dg:ChemicalDetail>
+               <dg:RegulationSet>TDG</dg:RegulationSet>
+               <dg:IDNumber>UN1956</dg:IDNumber>
+               <dg:HazardousMaterialsDescription>COMPRESSED GAS, N.O.S.</dg:HazardousMaterialsDescription>
+               <dg:ClassDivisionNumber>2.2</dg:ClassDivisionNumber>
+               <dg:TechnicalNameRequiredIndicator>Y</dg:TechnicalNameRequiredIndicator>
+               <dg:AdditionalShippingInformationRequiredIndicator>N</dg:AdditionalShippingInformationRequiredIndicator>
+               <dg:ChannelTunnelAcceptedIndicator>N</dg:ChannelTunnelAcceptedIndicator>
+               <dg:ChemicalType>TDG</dg:ChemicalType>
+               <dg:CAToUSShipmentAllowedIndicator>Y</dg:CAToUSShipmentAllowedIndicator>
+            </dg:ChemicalDetail>
+            <dg:ProperShippingNameDetail>
+               <dg:ProperShippingName>COMPRESSED GAS, N.O.S.</dg:ProperShippingName>
+            </dg:ProperShippingNameDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>CAO</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>COMAT CAO</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>COMAT LTD</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>COMAT PAX</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>GND</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>30.0000</dg:Quantity>
+               <dg:UOM>L</dg:UOM>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>LTD QTY</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>PAX</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+         </dg:ChemicalData>
+         <dg:ChemicalData>
+            <dg:ChemicalDetail>
+               <dg:RegulationSet>ADR</dg:RegulationSet>
+               <dg:IDNumber>UN1956</dg:IDNumber>
+               <dg:HazardousMaterialsDescription>COMPRESSED GAS, N.O.S.</dg:HazardousMaterialsDescription>
+               <dg:ClassDivisionNumber>2.2</dg:ClassDivisionNumber>
+               <dg:TechnicalNameRequiredIndicator>Y</dg:TechnicalNameRequiredIndicator>
+               <dg:AdditionalShippingInformationRequiredIndicator>N</dg:AdditionalShippingInformationRequiredIndicator>
+               <dg:TunnelRestrictionCode>(E)</dg:TunnelRestrictionCode>
+               <dg:TransportCategory>3</dg:TransportCategory>
+               <dg:TransportMultiplierQuantity>1</dg:TransportMultiplierQuantity>
+               <dg:ChannelTunnelAcceptedIndicator>Y</dg:ChannelTunnelAcceptedIndicator>
+               <dg:ChemicalType>ADR</dg:ChemicalType>
+            </dg:ChemicalDetail>
+            <dg:ProperShippingNameDetail>
+               <dg:ProperShippingName>COMPRESSED GAS, N.O.S.</dg:ProperShippingName>
+            </dg:ProperShippingNameDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>CAO</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>COMAT CAO</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>COMAT LTD</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>COMAT PAX</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>GND</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>30.0000</dg:Quantity>
+               <dg:UOM>KG G</dg:UOM>
+               <dg:PackagingInstructionCode>P200</dg:PackagingInstructionCode>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>LTD QTY</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+            <dg:PackageQuantityLimitDetail>
+               <dg:PackageQuantityLimitTypeCode>PAX</dg:PackageQuantityLimitTypeCode>
+               <dg:Quantity>0.0000</dg:Quantity>
+            </dg:PackageQuantityLimitDetail>
+         </dg:ChemicalData>
+      </dg:ChemicalReferenceDataResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

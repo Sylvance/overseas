@@ -1,0 +1,69 @@
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:upss="http://www.ups.com/XMLSchema/XOLTWS/UPSS/v1.0" xmlns:common="http://www.ups.com/XMLSchema/XOLTWS/Common/v1.0">
+	<env:Header>
+		<upss:UPSSecurity>
+			<upss:UsernameToken>
+				<upss:Username>Your User Name</upss:Username>
+				<upss:Password>Your Password</upss:Password>
+			</upss:UsernameToken>
+			<upss:ServiceAccessToken>
+				<upss:AccessLicenseNumber>Your Access License Number</upss:AccessLicenseNumber>
+			</upss:ServiceAccessToken>
+		</upss:UPSSecurity>
+	</env:Header>
+	<env:Body>
+		<dg:AcceptanceAuditPreCheckRequest xmlns:dg="http://www.ups.com/XMLSchema/XOLTWS/DangerousGoodsUtility/v1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<common:Request>
+				<common:TransactionReference>
+					<common:CustomerContext>Your Customer Context</common:CustomerContext>
+				</common:TransactionReference>
+			</common:Request>
+			<dg:OriginRecordTransactionTimestamp>Your Origin Record Transaction Timestamp</dg:OriginRecordTransactionTimestamp>
+			<dg:Shipment>
+				<dg:ShipperNumber>Your Shipper Number</dg:ShipperNumber>
+				<dg:ShipFromAddress>
+					<dg:AddressLine>Ship From Address Line</dg:AddressLine>
+					<dg:City>Lutherville Timonium</dg:City>
+					<dg:StateProvinceCode>MD</dg:StateProvinceCode>
+					<dg:PostalCode>21093</dg:PostalCode>
+					<dg:CountryCode>US</dg:CountryCode>
+				</dg:ShipFromAddress>
+				<dg:ShipToAddress>
+					<dg:AddressLine>Ship To Address Line</dg:AddressLine>
+					<dg:City>New Milford</dg:City>
+					<dg:StateProvinceCode>NJ</dg:StateProvinceCode>
+					<dg:PostalCode>07646</dg:PostalCode>
+					<dg:CountryCode>US</dg:CountryCode>
+				</dg:ShipToAddress>
+				<dg:Service>
+					<dg:Code>001</dg:Code>
+				</dg:Service>
+				<dg:RegulationSet>IATA</dg:RegulationSet>
+				<dg:Package>
+					<dg:PackageIdentifier>1</dg:PackageIdentifier>
+					<dg:PackageWeight>
+						<dg:Weight>12</dg:Weight>
+						<dg:UnitOfMeasurement>
+							<dg:Code>LBS</dg:Code>
+						</dg:UnitOfMeasurement>
+					</dg:PackageWeight>
+					<dg:TransportationMode>PAX</dg:TransportationMode>
+					<dg:EmergencyPhone>Your Emergency Phone</dg:EmergencyPhone>
+					<dg:EmergencyContact>Your Emergency Contact</dg:EmergencyContact>
+					<dg:ChemicalRecord>
+						<dg:ChemicalRecordIdentifier>1</dg:ChemicalRecordIdentifier>
+						<dg:ClassDivisionNumber>3</dg:ClassDivisionNumber>
+						<dg:IDNumber>UN2332</dg:IDNumber>
+						<dg:Quantity>25</dg:Quantity>
+						<dg:UOM>L</dg:UOM>
+						<dg:PackagingInstructionCode>355</dg:PackagingInstructionCode>
+						<dg:ProperShippingName>Acetaldehyde oxime</dg:ProperShippingName>
+						<dg:PackagingType>Fiberboard Box</dg:PackagingType>
+						<dg:PackagingGroupType>III</dg:PackagingGroupType>
+						<dg:PackagingTypeQuantity>1</dg:PackagingTypeQuantity>
+						<dg:CommodityRegulatedLevelCode>FR</dg:CommodityRegulatedLevelCode>
+					</dg:ChemicalRecord>
+				</dg:Package>
+			</dg:Shipment>
+		</dg:AcceptanceAuditPreCheckRequest>
+	</env:Body>
+</env:Envelope>
